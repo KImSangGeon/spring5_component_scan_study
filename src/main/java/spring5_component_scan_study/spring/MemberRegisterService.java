@@ -3,14 +3,12 @@ package spring5_component_scan_study.spring;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberRegisterService {
 	    @Autowired
 		private MemberDao memberDao;
-
-//		public MemberRegisterService(MemberDao memberDao) {
-//			this.memberDao = memberDao;
-//		}
 		
 		public Long regist(RegisterRequest req) {
 			Member member = memberDao.selectByEmail(req.getEmail());

@@ -1,14 +1,13 @@
 package spring5_component_scan_study.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ChangePasswordService {
 		@Autowired
 		private MemberDao memberDao;
 
-//		public void setMemberDao(MemberDao memberDao) {
-//			this.memberDao = memberDao;
-//		}
 		
 		public void changePassword(String email, String oldPwd, String newPwd) {
 			Member member = memberDao.selectByEmail(email);
