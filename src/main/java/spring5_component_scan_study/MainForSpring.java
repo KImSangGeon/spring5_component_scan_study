@@ -64,8 +64,7 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
-		MemberInfoPrinter infoPrinter =
-				ctx.getBean(MemberInfoPrinter.class);
+		MemberInfoPrinter infoPrinter = ctx.getBean(MemberInfoPrinter.class);
 		infoPrinter.printMemberInfo(arg[1]);		
 	}
 
@@ -80,8 +79,7 @@ public class MainForSpring {
 			return;
 		}
 	
-		MemberRegisterService regSvc = 
-				ctx.getBean(MemberRegisterService.class);
+		MemberRegisterService regSvc = ctx.getBean(MemberRegisterService.class);
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);
 		req.setName(arg[2]);
@@ -105,8 +103,7 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
-		ChangePasswordService changePwdSvc = 
-				ctx.getBean(ChangePasswordService.class);
+		ChangePasswordService changePwdSvc = ctx.getBean(ChangePasswordService.class);
 		
 		try {
 			changePwdSvc.changePassword(arg[1], arg[2], arg[3]);
